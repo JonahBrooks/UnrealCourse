@@ -68,6 +68,9 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 
 	/// See what we hit
 	AActor* ActorHit = Hit.GetActor();
-	UE_LOG(LogTemp, Warning, TEXT("LineTrace Hit: %s"), *(ActorHit->GetName()));
+	if (ActorHit)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("LineTrace Hit: %s"), *(ActorHit->GetName()));
+	}
 }
 
