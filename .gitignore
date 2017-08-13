@@ -75,4 +75,6 @@ Intermediate/*
 DerivedDataCache/*
 
 # Starter content
-03BuildingEscape/BuildingEscape/Content/StarterContent/
+03BuildingEscape/BuildingEscape/Content/StarterContent/Textures
+03BuildingEscape/BuildingEscape/Content/StarterContent/HDRI
+
