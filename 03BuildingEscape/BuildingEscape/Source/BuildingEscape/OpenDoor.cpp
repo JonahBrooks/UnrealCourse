@@ -49,14 +49,15 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	if (PressurePlate->IsOverlappingActor(ActorThatOpens))
 	{
 		OpenDoor();
+		bIsDoorClosingOrClosed = false;
 		DoorLastOpenTime = GetWorld()->GetTimeSeconds();
 		UE_LOG(LogTemp, Warning, TEXT("Opening Door"));
 	}
 
 	// Check if it's time to close the door
-	if ((GetWorld()->GetTimeSeconds() - DoorLastOpenTime) > DoorCloseDelay)
+	if ((GetWorld()->GetTimeSeconds() - DoorLastOpenTime) > DoorCloseDelay && !bIsDoorClosingOrClosed)
 	{
-		
+		bIsDoorClosingOrClosed = true;
 		CloseDoor();
 		UE_LOG(LogTemp, Warning, TEXT("Closing Door"));
 	}
