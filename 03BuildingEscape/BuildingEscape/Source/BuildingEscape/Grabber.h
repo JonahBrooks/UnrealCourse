@@ -45,6 +45,12 @@ private:
 	// Return hit for first physics body in reach
 	FHitResult GetFirstPhysicsBodyInReach() const;
 
+	// Return the end point of a grab raycast
+	FVector GetReachLineEnd() const;
+
+	// Return the start point of a grab raycast
+	FVector GetReachLineStart() const;
+
 	// Ray-cast and grab what's in reach
 	void Grab();
 
