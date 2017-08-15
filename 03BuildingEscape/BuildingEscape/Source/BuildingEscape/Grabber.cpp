@@ -124,10 +124,11 @@ void UGrabber::Grab()
 	if (ActorHit)
 	{
 		// Or GrabComponentAtLocationWithRotation and supply ~->GetActorRotation()
-		PhysicsHandle->GrabComponentAtLocation(
+		PhysicsHandle->GrabComponentAtLocationWithRotation(
 			ComponentToGrab,
 			NAME_None,
-			ComponentToGrab->GetOwner()->GetActorLocation()
+			ComponentToGrab->GetOwner()->GetActorLocation(),
+			ComponentToGrab->GetOwner()->GetActorRotation()
 		);
 	}
 
