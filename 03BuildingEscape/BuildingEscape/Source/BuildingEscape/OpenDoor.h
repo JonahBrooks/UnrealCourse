@@ -44,5 +44,6 @@ private:
 	bool bIsDoorClosingOrClosed = true;
 
 	AActor* Owner;
-	AActor* ActorThatOpens;
+
+	float GetTotalMassOnPlate() const;
 };
